@@ -14,7 +14,7 @@ const LargeNews = ({ data }) => {
 			<div className="card-body text-center">
 				<h5 className="card-title">{data.name}</h5>
 				<div className="text-muted">
-					<span>Price: ${data.price}</span>
+					Price:<span className='text-danger'> <b>${data.price}</b></span>
 				</div>
 			</div>
 		</div>
@@ -33,7 +33,7 @@ const SmallNews = ({ data }) => {
 							<b>{data.name}</b>
 						</div>
 						<p className="card-text">
-							<span>Price: ${data.price}</span>
+							Price:<span className='text-danger'> <b>${data.price}</b></span>
 						</p>
 						<div className="card-title">
 							<button className="bg-white button1" style={{ border:"1px solid grey", outline:"none", padding:"5px" }}>Buy Now</button>
@@ -64,7 +64,7 @@ const CategoryNews = (props) =>
 				{/* <LargeNews data={props.list.filter((news) => news.size == "large")} /> */}
         		<div className="col-6 mt-3">
 					{props.listNews
-						.filter((news) => news.size === "large")
+						.filter((news) => news.size === "big")
 						.map((news) => (
 							<LargeNews key={news.id} data={news}/>
 						))}

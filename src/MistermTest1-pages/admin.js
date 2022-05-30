@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import '../assets/css/style.css';
 // import { v4 as uuidv4 } from 'uuid';
 class Admin extends Component {
   constructor(props) {
@@ -167,7 +168,7 @@ class Admin extends Component {
   };
   render() {
     return (
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
           <div className="col-4 card bg-dark">
             <form onSubmit={this.onSave} className="text-white">
@@ -260,7 +261,7 @@ class Admin extends Component {
                   <div className="card-body">
                     <h5 className="card-title">{product.name}</h5>
                     <div className="row">
-                      <div className="col-6">Price: ${product.price}</div>
+                      <div className="col-6">Price: <b className="text-danger">${product.price}</b></div>
                     </div>
 
                     <button

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { CategoryNews } from "../component-MistermTest/news";
+import { CategoryNews } from "../MistermTest1/news";
+import '../assets/css/style.css';
 // import "./../assets/css/Product.css";
 // import swal from "sweetalert";
 import axios from "axios";
@@ -38,7 +39,7 @@ const Home = () => {
   }, [data]);
 
     return (
-        <div className="container">
+        <div className="container-fluid">
         {data.isLoaded ? (
             <div className="row">
                 <div className="col-10">
