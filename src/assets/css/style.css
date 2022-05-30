@@ -1,0 +1,35 @@
+.large{
+    border: 0px solid black;
+    width: 500px;
+}
+.large-header{
+    display: flex;
+}
+.large-btn{
+    padding-left: 70px;
+}
+.button1 {
+    color: black;
+    border: 2px solid #555555;
+}
+
+.button1:hover {
+    color: rgb(163, 19, 19);
+}
+.card-img-top{
+    width: auto;
+}
+/*  */
+.small{
+    border-bottom: 1px solid black;
+    /* width: 80%;
+    height: 200px; */
+}
+.roww{
+    display: flex;
+}
+.smalll {
+    width: 510px;
+    height: 350px;
+    overflow: scroll;
+}
