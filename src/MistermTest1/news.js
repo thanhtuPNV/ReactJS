@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import '../assets/css/style.css';
 
 const LargeNews = ({ data }) => {
-  // console.log(data.id);
+  console.log(data.id);
   return(
     <div className="large">
 			<div className="large-header">
 				<img src={data.img} className="card-img-top" alt="..." />
 				<div className="large-btn" style={{ paddingTop:"110px" }}>
-					<button className="bg-white button1" style={{ border:"1px solid grey", outline:"none", padding:"5px" }}>Buy Now</button>
+					<button className="bg-white button1" style={{ border:"1px solid grey", outline:"none", padding:"5px" }} onClick={() => addCart(data)}>Buy Now</button>
 				</div>
 			</div>
 			<div className="card-body text-center">
@@ -20,7 +20,20 @@ const LargeNews = ({ data }) => {
 		</div>
   )
 }
+
+
+const addCart = (data) => {
+	alert("Bạn đã thêm " + data.name + " vào giỏ hàng!");
+	const cartArrStr = localStorage.getItem('cart') || "[]";
+	const cart = JSON.parse(cartArrStr);
+	cart.push({...data, qty: 1});
+	localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+const cart = () => {}
+
 const SmallNews = ({ data }) => {
+	console.log(data.id);
   return(
     <div className="small" >
 			<div className="roww">
@@ -36,7 +49,7 @@ const SmallNews = ({ data }) => {
 							Price:<span className='text-danger'> <b>${data.price}</b></span>
 						</p>
 						<div className="card-title">
-							<button className="bg-white button1" style={{ border:"1px solid grey", outline:"none", padding:"5px" }}>Buy Now</button>
+							<button className="bg-white button1" style={{ border:"1px solid grey", outline:"none", padding:"5px" }} onClick={() => addCart(data)}>Buy Now</button>
 						</div>
 					</div>
 				</div>
@@ -44,6 +57,7 @@ const SmallNews = ({ data }) => {
 		</div>
   )
 }
+
 
 const Advertisement = ({data}) => {
 	return(
